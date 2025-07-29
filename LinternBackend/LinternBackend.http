@@ -1,0 +1,6 @@
+@LinternBackend_HostAddress = http://localhost:5196
+
+GET {{LinternBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
