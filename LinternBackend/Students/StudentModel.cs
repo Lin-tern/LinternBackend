@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LinternBackend.Applications;
+using Microsoft.AspNetCore.Identity;
 
 namespace LinternBackend.Students
 {
-    public class Student
+    public class Student : IdentityUser
     {
-        public int Id { get; set; }
         public string FullName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string PasswordHash { get; set; } = string.Empty; // hashed password
         public string University { get; set; } = string.Empty;
         public string CourseOfStudy { get; set; } = string.Empty;
         public string Level { get; set; }  = string.Empty;// e.g., 200, 300 level
