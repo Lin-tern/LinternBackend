@@ -4,12 +4,14 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Threading.Tasks;
 using LinternBackend.Jobs;
-using Microsoft.AspNetCore.Identity;
+using LinternBackend.User;
 
 namespace LinternBackend.Organizations
 {
     public class Organization 
     {
+        public Guid OrganizationId { get; set; }
+        public string UserId { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public string ContactEmail { get; set; } = string.Empty;
         public string Industry { get; set; } = string.Empty;
@@ -17,7 +19,8 @@ namespace LinternBackend.Organizations
         public string LogoUrl { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
 
-            public ICollection<Job> Jobs { get; set; } = new List<Job>();
+        public AppUser appUser { get; set; } = new AppUser();
+        public ICollection<Job> Jobs { get; set; } = new List<Job>();
     }
 
 }

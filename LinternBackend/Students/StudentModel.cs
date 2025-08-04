@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LinternBackend.Applications;
-using Microsoft.AspNetCore.Identity;
+using LinternBackend.User;
 
 namespace LinternBackend.Students
 {
-    public class Student : IdentityUser
+    public class Student
     {
+        public Guid StudentId { get; set; }
+        public string UserId { get; set; } = string.Empty;
+
         public string FullName { get; set; } = string.Empty;
         public string University { get; set; } = string.Empty;
         public string CourseOfStudy { get; set; } = string.Empty;
@@ -19,6 +22,7 @@ namespace LinternBackend.Students
         public string GithubUrl { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         
+        public AppUser appUser { get; set; } = new AppUser();
         public ICollection<Application> Applications { get; set; } = new List<Application>();
     }
 

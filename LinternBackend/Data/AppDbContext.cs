@@ -10,12 +10,13 @@ using LinternBackend.Reviews;
 using LinternBackend.Skills;
 using LinternBackend.Students;
 using LinternBackend.StudentSkills;
+using LinternBackend.User;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LinternBackend.Data
 {
-    public class AppDbContext : IdentityDbContext<Student>
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext (DbContextOptions<AppDbContext> options) : base(options) { }
 
