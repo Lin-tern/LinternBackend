@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using LinternBackend.Applications;
@@ -9,6 +10,7 @@ namespace LinternBackend.Reviews
 {
     public class Review
     {
+        [Key]
         public Guid Id { get; set; }
         public Guid ApplicationId { get; set; }
         public Guid ReviewerOrganizationId { get; set; } // optional: allow student reviews too

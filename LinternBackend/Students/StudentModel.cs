@@ -1,14 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using LinternBackend.Applications;
+using LinternBackend.Resumes;
+using LinternBackend.StudentSkills;
 using LinternBackend.User;
 
 namespace LinternBackend.Students
 {
     public class Student
     {
+        [Key]
         public Guid StudentId { get; set; }
         public string UserId { get; set; } = string.Empty;
 
@@ -23,6 +27,8 @@ namespace LinternBackend.Students
         public DateTime CreatedAt { get; set; }
         
         public AppUser appUser { get; set; } = new AppUser();
+        public ICollection<StudentSkill> studentSkills { get; set; } = new List<StudentSkill>();
+        public ICollection<Resume> resumes { get; set; } = new List<Resume>();
         public ICollection<Application> Applications { get; set; } = new List<Application>();
     }
 
