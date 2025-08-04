@@ -8,7 +8,7 @@ namespace LinternBackend.Skills
 {
     public class Skill
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty; // e.g., "C#", "UI/UX", "Data Analysis"
         public ICollection<StudentSkill> StudentSkills { get; set; } = new List<StudentSkill>();
     }

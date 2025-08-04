@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LinternBackend.Applications;
-using LinternBackend.Organizations;
+
 namespace LinternBackend.Jobs
 {
-    public class Job
+    public class ViewJob
     {
         public Guid Id { get; set; }
         public Guid OrganizationId { get; set; }
@@ -17,11 +16,5 @@ namespace LinternBackend.Jobs
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public bool IsPaid { get; set; }
-        public DateTime Deadline { get; set; }
-        public DateTime CreatedAt { get; set; }
-
-        public Organization Organization { get; set; } = new Organization();
-        public ICollection<Application> Applications { get; set; } = new List<Application>();
     }
-
 }
