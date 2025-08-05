@@ -7,6 +7,7 @@ namespace LinternBackend.Organizations
 {
     public class CreateOrganizationDto
     {
+        public string UserId { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public string ContactEmail { get; set; } = string.Empty;
         public string Industry { get; set; } = string.Empty;
