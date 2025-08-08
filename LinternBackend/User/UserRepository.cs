@@ -83,5 +83,15 @@ namespace LinternBackend.User
                 return (null, $"Unexpected error: {ex.Message}");
             }
         }
+
+        public async Task<string?> token(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) return null;
+            var userRole = await _userManager.GetRolesAsync(user);
+            var token = _tokenService.CreateToken(user, userRole);
+
+            return token;
+        }
     }
 }

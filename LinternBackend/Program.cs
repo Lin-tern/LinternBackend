@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using LinternBackend.Applications;
 using LinternBackend.Data;
+using LinternBackend.Organizations;
 using LinternBackend.Students;
 using LinternBackend.Token;
 using LinternBackend.User;
@@ -23,6 +24,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IApplicationRepository, ApplicationRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IOrganizationRepository, OrganizationRepository>();
 
 
 builder.Services.AddDbContext<AppDbContext>(options =>

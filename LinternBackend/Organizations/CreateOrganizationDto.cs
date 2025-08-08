@@ -13,5 +13,6 @@ namespace LinternBackend.Organizations
         public string Industry { get; set; } = string.Empty;
         public string WebsiteUrl { get; set; } = string.Empty;
         public string LogoUrl { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
     }
 }
