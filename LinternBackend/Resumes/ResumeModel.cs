@@ -15,7 +15,7 @@ namespace LinternBackend.Resumes
         public string FileUrl { get; set; } = string.Empty;
         public DateTime UploadedAt { get; set; }
 
-        public Student Student { get; set; } = new Student();
+        public Student? Student { get; set; }
     }
 
 }

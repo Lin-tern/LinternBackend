@@ -247,6 +247,10 @@ namespace LinternBackend.Migrations
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -373,6 +377,20 @@ namespace LinternBackend.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "eb586349-60f3-4096-bb31-cc6bcb846a19",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2490f118-507e-4217-86eb-ac48bbb9c114",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -668,11 +686,9 @@ namespace LinternBackend.Migrations
 
             modelBuilder.Entity("LinternBackend.User.AppUser", b =>
                 {
-                    b.Navigation("organization")
-                        .IsRequired();
+                    b.Navigation("organization");
 
-                    b.Navigation("student")
-                        .IsRequired();
+                    b.Navigation("student");
                 });
 #pragma warning restore 612, 618
         }

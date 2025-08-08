@@ -17,6 +17,7 @@ namespace LinternBackend.Students
         public string UserId { get; set; } = string.Empty;
 
         public string FullName { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty; 
         public string University { get; set; } = string.Empty;
         public string CourseOfStudy { get; set; } = string.Empty;
         public string Level { get; set; }  = string.Empty;// e.g., 200, 300 level
@@ -26,7 +27,7 @@ namespace LinternBackend.Students
         public string GithubUrl { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         
-        public AppUser appUser { get; set; } = new AppUser();
+        public AppUser? appUser { get; set; }
         public ICollection<StudentSkill> studentSkills { get; set; } = new List<StudentSkill>();
         public ICollection<Resume> resumes { get; set; } = new List<Resume>();
         public ICollection<Application> Applications { get; set; } = new List<Application>();

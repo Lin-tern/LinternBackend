@@ -20,9 +20,9 @@ namespace LinternBackend.Applications
         public string CoverLetter { get; set; } = string.Empty;
         public DateTime AppliedAt { get; set; }
 
-        public Student Student { get; set; } = new Student();
-        public Job Job { get; set; } = new Job();
-        public Review review { get; set; } = new Review();
+        public Student? Student { get; set; }
+        public Job? Job { get; set; }
+        public Review? review { get; set; }
     }
 
 }

@@ -22,8 +22,8 @@ namespace LinternBackend.Organizations
         public string LogoUrl { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
 
-        public AppUser appUser { get; set; } = new AppUser();
-        public Review review { get; set; } = new Review();
+        public AppUser? appUser { get; set; }
+        public Review? review { get; set; }
         public ICollection<Job> Jobs { get; set; } = new List<Job>();
     }
 

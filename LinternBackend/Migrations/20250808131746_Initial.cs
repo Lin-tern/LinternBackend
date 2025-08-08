@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace LinternBackend.Migrations
 {
     /// <inheritdoc />
@@ -199,6 +201,7 @@ namespace LinternBackend.Migrations
                     StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     University = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CourseOfStudy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Level = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -345,6 +348,15 @@ namespace LinternBackend.Migrations
                         principalTable: "Organizations",
                         principalColumn: "OrganizationId",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "2490f118-507e-4217-86eb-ac48bbb9c114", null, "User", "USER" },
+                    { "eb586349-60f3-4096-bb31-cc6bcb846a19", null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(

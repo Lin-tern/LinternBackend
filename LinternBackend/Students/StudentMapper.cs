@@ -12,7 +12,7 @@ namespace LinternBackend.Students
         {
             return new Student
             {
-                UserId = create.UserId,
+                Email = create.Email,
                 FullName = create.FullName,
                 University = create.University,
                 CourseOfStudy = create.CourseOfStudy,
@@ -31,6 +31,7 @@ namespace LinternBackend.Students
             {
                 StudentId = student.StudentId,
                 UserId = student.UserId,
+                Email = student.Email,
                 FullName = student.FullName,
                 University = student.University,
                 CourseOfStudy = student.CourseOfStudy,

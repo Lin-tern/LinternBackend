@@ -15,8 +15,8 @@ namespace LinternBackend.StudentSkills
         public Guid StudentId { get; set; }
         public Guid SkillId { get; set; }
 
-        public Student Student { get; set; } = new Student();
-        public Skill Skill { get; set; } = new Skill();
+        public Student? Student { get; set; }
+        public Skill? Skill { get; set; }
     }
 
 }

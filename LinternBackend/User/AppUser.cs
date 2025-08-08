@@ -12,7 +12,7 @@ namespace LinternBackend.User
     public class AppUser : IdentityUser
     {
 
-        public Student student { get; set; } = new Student();
-        public Organization organization { get; set; } = new Organization();
+        public Student? student { get; set; }
+        public Organization? organization { get; set; }
     }
 }

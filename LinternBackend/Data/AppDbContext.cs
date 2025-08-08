@@ -11,6 +11,7 @@ using LinternBackend.Skills;
 using LinternBackend.Students;
 using LinternBackend.StudentSkills;
 using LinternBackend.User;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -32,10 +33,24 @@ namespace LinternBackend.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-             base.OnModelCreating(builder);
+            base.OnModelCreating(builder);
+            List<IdentityRole> role = new List<IdentityRole>()
+                {
+                new IdentityRole
+                {
+                    Name = "Admin",
+                    NormalizedName = "ADMIN"
+                },
+                new IdentityRole
+                {
+                    Name = "User",
+                    NormalizedName = "USER"
+                }
+                };
+            builder.Entity<IdentityRole>().HasData(role);
 
         // Application ↔ Job (many-to-1)
-        builder.Entity<Application>()
+            builder.Entity<Application>()
             .HasOne(a => a.Job)
             .WithMany(j => j.Applications)
             .HasForeignKey(a => a.JobId)

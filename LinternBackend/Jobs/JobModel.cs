@@ -22,7 +22,7 @@ namespace LinternBackend.Jobs
         public DateTime Deadline { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public Organization Organization { get; set; } = new Organization();
+        public Organization? Organization { get; set; }
         public ICollection<Application> Applications { get; set; } = new List<Application>();
     }
 

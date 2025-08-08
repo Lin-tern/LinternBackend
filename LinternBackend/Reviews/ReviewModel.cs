@@ -18,8 +18,8 @@ namespace LinternBackend.Reviews
         public int Rating { get; set; } // e.g., 1 to 5
         public DateTime CreatedAt { get; set; }
 
-        public Application Application { get; set; } = new Application();
-        public Organization ReviewerOrganization { get; set; } = new Organization();
+        public Application? Application { get; set; }
+        public Organization? ReviewerOrganization { get; set; }
     }
 
 }
