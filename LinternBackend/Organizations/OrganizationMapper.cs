@@ -11,7 +11,6 @@ namespace LinternBackend.Organizations
         {
             return new Organization
             {
-                UserId = create.UserId,
                 Name = create.Name,
                 ContactEmail = create.ContactEmail,
                 Industry = create.Industry,
@@ -25,6 +24,7 @@ namespace LinternBackend.Organizations
             return new ViewOrganization
             {
                 OrganizationId = organization.OrganizationId,
+                UserId = organization.UserId,
                 Name = organization.Name,
                 ContactEmail = organization.ContactEmail,
                 Industry = organization.Industry,

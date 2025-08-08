@@ -7,6 +7,6 @@ namespace LinternBackend.Organizations
 {
     public interface IOrganizationRepository
     {
-        
+        public Task<(Organization? organization, string? text)> createOrganization(Organization organization, string password); 
     }
 }

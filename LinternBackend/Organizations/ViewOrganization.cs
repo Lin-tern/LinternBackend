@@ -8,6 +8,7 @@ namespace LinternBackend.Organizations
     public class ViewOrganization
     {
         public Guid OrganizationId { get; set; }
+        public string? UserId { get; set; }
         public string Name { get; set; } = string.Empty;
         public string ContactEmail { get; set; } = string.Empty;
         public string Industry { get; set; } = string.Empty;
