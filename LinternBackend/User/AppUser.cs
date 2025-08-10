@@ -11,6 +11,7 @@ namespace LinternBackend.User
 {
     public class AppUser : IdentityUser
     {
+        public string Type { get; set; } = string.Empty;
 
         public Student? student { get; set; }
         public Organization? organization { get; set; }

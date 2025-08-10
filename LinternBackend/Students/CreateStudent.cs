@@ -15,7 +15,7 @@ namespace LinternBackend.Students
         public string University { get; set; } = string.Empty;
         public string CourseOfStudy { get; set; } = string.Empty;
         public string Level { get; set; } = string.Empty;// e.g., 200, 300 level
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
         public string Phone { get; set; } = string.Empty;
         public string LinkedInUrl { get; set; } = string.Empty;
         public string GithubUrl { get; set; } = string.Empty;

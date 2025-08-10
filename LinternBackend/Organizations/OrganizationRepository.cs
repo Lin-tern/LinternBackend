@@ -27,6 +27,7 @@ namespace LinternBackend.Organizations
 
             if (user.User == null) return (null, $"{user.ErrorMessage}");
             organization.UserId = user.User.Id;
+            user.User.Type = "Organization"; 
             await _context.Organizations.AddAsync(organization);
             await _context.SaveChangesAsync();
             return (organization, "null");

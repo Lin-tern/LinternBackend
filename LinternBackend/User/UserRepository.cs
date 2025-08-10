@@ -64,6 +64,15 @@ namespace LinternBackend.User
             }
         }
 
+        public async Task<AppUser?> deleteUser(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) return null;
+
+            await _userManager.DeleteAsync(user);
+            return user;
+        }
+
         public async Task<(AppUser? User, string? ErrorMessage)> loginUser(string email, string password)
         {
             try

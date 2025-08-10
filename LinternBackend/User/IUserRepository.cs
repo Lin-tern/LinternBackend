@@ -11,5 +11,6 @@ namespace LinternBackend.User
         public Task<(AppUser? User, string? ErrorMessage)> createUser(string Email, string Password);
         public Task<(AppUser? User, string? ErrorMessage)> loginUser(string Email, string Password);
         public Task<String?> token(string userId);
+        public Task<AppUser?> deleteUser(string userId);
     }
 }
