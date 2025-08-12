@@ -49,13 +49,13 @@ namespace LinternBackend.Jobs
             var job = await _context.Jobs.FirstOrDefaultAsync(x => x.Id == id);
             if (job == null) return null;
 
-            if (update.Title != null) job.Title = update.Title;
-            if (update.Description != null) job.Description = update.Description;
-            if (update.Location != null) job.Location = update.Location;
-            if (update.Type != null) job.Type = update.Type;
-            if (update.StartDate != job.StartDate) job.StartDate = update.StartDate;
-            if (update.EndDate != job.EndDate) job.EndDate = update.EndDate;
-            if (update.IsPaid != job.IsPaid) job.IsPaid = update.IsPaid;
+            if (!string.IsNullOrWhiteSpace(update.Title)) job.Title = update.Title;
+            if (!string.IsNullOrWhiteSpace(update.Description)) job.Description = update.Description;
+            if (!string.IsNullOrWhiteSpace(update.Location)) job.Location = update.Location;
+            if (!string.IsNullOrWhiteSpace(update.Type)) job.Type = update.Type;
+            if (update.StartDate.HasValue) job.StartDate = update.StartDate.Value;
+            if (update.EndDate.HasValue) job.EndDate = update.EndDate.Value;
+            if (update.IsPaid.HasValue) job.IsPaid = update.IsPaid.Value;
 
             await _context.SaveChangesAsync();
             return job;

@@ -29,7 +29,7 @@ namespace LinternBackend.Applications
         {
             var application = await _appRepo.getById(id);
             if (application == null) return NotFound();
-            return Ok(application);
+            return Ok(application.FromApplication());
         }
 
         [HttpPost("create")]
@@ -37,7 +37,25 @@ namespace LinternBackend.Applications
         {
             var app = application.ToApplication();
             await _appRepo.create(app);
-            return Ok(app);
+            return Ok(app.FromApplication());
+        }
+
+        [HttpPatch("update/{id:guid}")]
+        public async Task<IActionResult> updateApplication([FromRoute] Guid id, [FromBody] UpdateApplication update)
+        {
+            var application = await _appRepo.update(id, update);
+            if (application == null) return NotFound();
+
+            return Ok(application.FromApplication());
+        }
+
+        [HttpDelete("delete/{id:guid}")]
+        public async Task<IActionResult> deleteAsync([FromRoute] Guid id)
+        {
+            var application = await _appRepo.deleteById(id);
+            if (application == null) return NotFound();
+
+            return Ok();
         }
     }
 }

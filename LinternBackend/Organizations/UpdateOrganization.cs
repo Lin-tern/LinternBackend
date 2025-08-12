@@ -8,9 +8,9 @@ namespace LinternBackend.Organizations
 {
     public class UpdateOrganization
     {
-        public string Name { get; set; } = string.Empty;
-        public string Industry { get; set; } = string.Empty;
-        public string WebsiteUrl { get; set; } = string.Empty;
-        public string LogoUrl { get; set; } = string.Empty;
+        public string? Name { get; set; }
+        public string? Industry { get; set; }
+        public string? WebsiteUrl { get; set; }
+        public string? LogoUrl { get; set; }
     }
 }

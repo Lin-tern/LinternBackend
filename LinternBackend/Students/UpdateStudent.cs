@@ -7,13 +7,13 @@ namespace LinternBackend.Students
 {
     public class UpdateStudent
     {
-        public string FullName { get; set; } = string.Empty;
-        public string University { get; set; } = string.Empty;
-        public string CourseOfStudy { get; set; } = string.Empty;
-        public string Level { get; set; }  = string.Empty;// e.g., 200, 300 level
+        public string? FullName { get; set; }
+        public string? University { get; set; }
+        public string? CourseOfStudy { get; set; }
+        public string? Level { get; set; } 
         public DateTime? DateOfBirth { get; set; }
-        public string Phone { get; set; } = string.Empty;
-        public string LinkedInUrl { get; set; } = string.Empty;
-        public string GithubUrl { get; set; } = string.Empty;
+        public string? Phone { get; set; } 
+        public string? LinkedInUrl { get; set; } 
+        public string? GithubUrl { get; set; }
     }
 }

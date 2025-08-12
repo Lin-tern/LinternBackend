@@ -62,10 +62,10 @@ namespace LinternBackend.Organizations
             var organization = await _context.Organizations.FirstOrDefaultAsync(x => x.OrganizationId == id);
             if (organization == null) return null;
 
-            if (update.Name != null) organization.Name = update.Name;
-            if (update.Industry != null) organization.Industry = update.Industry;
-            if (update.WebsiteUrl != null) organization.WebsiteUrl = update.WebsiteUrl;
-            if (update.LogoUrl != null) organization.LogoUrl = update.LogoUrl;
+            if (!string.IsNullOrWhiteSpace(update.Name)) organization.Name = update.Name;
+            if (!string.IsNullOrWhiteSpace(update.Industry)) organization.Industry = update.Industry;
+            if (!string.IsNullOrWhiteSpace(update.WebsiteUrl)) organization.WebsiteUrl = update.WebsiteUrl;
+            if (!string.IsNullOrWhiteSpace(update.LogoUrl)) organization.LogoUrl = update.LogoUrl;
 
 
             await _context.SaveChangesAsync();

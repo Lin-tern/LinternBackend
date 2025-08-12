@@ -6,6 +6,7 @@ using LinternBackend.Organizations;
 using LinternBackend.Students;
 using LinternBackend.Token;
 using LinternBackend.User;
+using LinternBackend.Email;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IApplicationRepository, ApplicationRepository>();
@@ -60,8 +62,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
-app.UseCors("AllowFrontendClients");
 
 app.MapControllers();
 app.Run();

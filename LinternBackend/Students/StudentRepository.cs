@@ -55,14 +55,14 @@ namespace LinternBackend.Students
             var student = await _context.Students.FirstOrDefaultAsync(x => x.StudentId == id);
             if (student == null) return null;
 
-            if (update.FullName != null) student.FullName = update.FullName;
-            if (update.University != null) student.University = update.University;
-            if (update.CourseOfStudy != null) student.CourseOfStudy = update.CourseOfStudy;
-            if (update.Level != null) student.Level = update.Level;
-            if (update.DateOfBirth != null) student.DateOfBirth = update.DateOfBirth;
-            if (update.Phone != null) student.Phone = update.Phone;
-            if (update.LinkedInUrl != null) student.LinkedInUrl = update.LinkedInUrl;
-            if (update.GithubUrl != null) student.GithubUrl = update.GithubUrl;
+            if (!string.IsNullOrWhiteSpace(update.FullName)) student.FullName = update.FullName;
+            if (!string.IsNullOrWhiteSpace(update.University)) student.University = update.University;
+            if (!string.IsNullOrWhiteSpace(update.CourseOfStudy)) student.CourseOfStudy = update.CourseOfStudy;
+            if (!string.IsNullOrWhiteSpace(update.Level)) student.Level = update.Level;
+            if (update.DateOfBirth.HasValue) student.DateOfBirth = update.DateOfBirth.Value;
+            if (!string.IsNullOrWhiteSpace(update.Phone)) student.Phone = update.Phone;
+            if (!string.IsNullOrWhiteSpace(update.LinkedInUrl)) student.LinkedInUrl = update.LinkedInUrl;
+            if (!string.IsNullOrWhiteSpace(update.GithubUrl)) student.GithubUrl = update.GithubUrl;
 
             await _context.SaveChangesAsync();
             return student;

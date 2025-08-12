@@ -7,12 +7,12 @@ namespace LinternBackend.Jobs
 {
     public class UpdateJob
     {
-        public string Title { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public string Location { get; set; } = string.Empty;
-        public string Type { get; set; } = string.Empty; // e.g., Remote, Onsite, Hybrid
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public bool IsPaid { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? Location { get; set; }
+        public string? Type { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public bool? IsPaid { get; set; }
     }
 }
