@@ -7,7 +7,6 @@ namespace LinternBackend.Resumes
 {
     public class UpdateResume
     {
-        public Guid StudentId { get; set; }
-        public string FileUrl { get; set; } = string.Empty;
+        public string? FileUrl { get; set; }
     }
 }
